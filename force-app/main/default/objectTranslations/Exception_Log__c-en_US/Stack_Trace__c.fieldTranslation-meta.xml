@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Populated from e.getStackTraceString() — used for root-cause debugging --></help>
+    <label><!-- Stack Trace --></label>
+    <name>Stack_Trace__c</name>
+</CustomFieldTranslation>

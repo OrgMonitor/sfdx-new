@@ -1,0 +1,45 @@
+<template>
+    <div class="wsp-card">
+        <h3 class="wsp-title">Setup Progress</h3>
+        <div class="wsp-chart-wrapper">
+            <svg
+                class="wsp-donut"
+                viewBox="0 0 100 100"
+                role="progressbar"
+                aria-valuenow={progressPercent}
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label={progressAriaLabel}
+            >
+                <!-- Background ring -->
+                <circle
+                    class="wsp-track"
+                    cx="50"
+                    cy="50"
+                    r="38"
+                    fill="none"
+                    stroke="#e0e0e0"
+                    stroke-width="8"
+                />
+                <!-- Progress ring -->
+                <circle
+                    class="wsp-progress"
+                    cx="50"
+                    cy="50"
+                    r="38"
+                    fill="none"
+                    stroke="#0b6e31"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    stroke-dasharray={circleCircumference}
+                    stroke-dashoffset={strokeDashoffset}
+                    transform="rotate(-90 50 50)"
+                />
+                <!-- Center text -->
+                <text x="50" y="46" text-anchor="middle" class="wsp-center-num" aria-hidden="true">{currentStepDisplay}</text>
+                <text x="50" y="59" text-anchor="middle" class="wsp-center-of" aria-hidden="true">of {totalSteps}</text>
+            </svg>
+        </div>
+        <p class="wsp-percent-label">{progressPercent}% completed</p>
+    </div>
+</template>

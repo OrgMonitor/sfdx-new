@@ -1,0 +1,154 @@
+<template>
+    <div class="gsw-container">
+        <a class="gsw-skip-link" href="#gsw-main" onclick={handleSkipToContent}>Skip to setup content</a>
+        <template if:true={isInitialLoading}><div class="gsw-success" role="status"><lightning-spinner alternative-text="Loading saved Org Monitor configuration"></lightning-spinner></div></template>
+        <template if:true={loadError}><div class="gsw-success" role="alert"><p>{loadError}</p><lightning-button label="Retry" onclick={handleRetryLoad}></lightning-button></div></template>
+        <template if:true={canRenderWizard}>
+
+        <!-- Success screen (shown after final save) -->
+        <template if:true={isComplete}>
+            <div class="gsw-success" role="main" aria-labelledby="gsw-success-heading">
+                <div class="gsw-success-card" tabindex="-1">
+                    <span class="gsw-success-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" class="gsw-success-svg">
+                            <circle cx="32" cy="32" r="30" fill="#0b6e31"/>
+                            <path d="M20 33l8 8 16-16" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                    <h1 id="gsw-success-heading" class="gsw-success-title">Org Monitor is now active!</h1>
+                    <p class="gsw-success-body">
+                        Your settings have been saved. Org Monitor will now monitor your org for compliance violations.
+                    </p>
+                    <dl class="gsw-success-summary">
+                        <div class="gsw-success-row">
+                            <dt>Deployment users</dt>
+                            <dd>{deploymentUsersSummary}</dd>
+                        </div>
+                        <div class="gsw-success-row">
+                            <dt>Deployment window approval</dt>
+                            <dd>{approvalSummary}</dd>
+                        </div>
+                        <div class="gsw-success-row">
+                            <dt>Initial run window</dt>
+                            <dd>{initialRunWindow} days</dd>
+                        </div>
+                    </dl>
+                    <div class="gsw-success-actions">
+                        <lightning-button
+                            variant="brand"
+                            label="Return to Setup"
+                            onclick={handleReturnToSetup}
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Wizard (hidden once complete) -->
+        <template if:false={isComplete}>
+            <!-- Left sidebar -->
+            <c-wizard-sidebar
+                steps={steps}
+                current-step-index={currentStepIndex}
+                onstepselect={handleStepSelect}
+            ></c-wizard-sidebar>
+
+            <!-- Center column -->
+            <div class="gsw-center">
+                <c-wizard-progress-bar
+                    steps={steps}
+                    current-step-index={currentStepIndex}
+                ></c-wizard-progress-bar>
+
+                <main
+                    class="gsw-main"
+                    id="gsw-main"
+                    tabindex="-1"
+                    aria-live="polite"
+                    aria-label="Wizard step content"
+                >
+                    <template if:true={isStep0}>
+                        <c-step-welcome></c-step-welcome>
+                    </template>
+
+                    <template if:true={isStep1}>
+                        <c-step-app-setup
+                            deployment-users={deploymentUsers}
+                            enable-approval={enableApproval}
+                            approval-users={approvalUsers}
+                            initial-run-window={initialRunWindow}
+                            unusual-hours-start={unusualHoursStart}
+                            unusual-hours-end={unusualHoursEnd}
+                            skip-deployment-windows-for-sandbox={skipDeploymentWindowsForSandbox}
+                            is-sandbox={isSandbox}
+                            slack-enabled={slackEnabled}
+                            microsoft-enabled={microsoftEnabled}
+                            ondeploymentuserschange={handleDeploymentUsersChange}
+                            onenableapprovalchange={handleEnableApprovalChange}
+                            onapprovaluserschange={handleApprovalUsersChange}
+                            onrunwindowchange={handleRunWindowChange}
+                            onunusualhourschange={handleUnusualHoursChange}
+                            onsandboxskipchange={handleSandboxSkipChange}
+                            onproviderchange={handleProviderChange}
+                            onsetupstatuschange={handleSetupStatusChange}
+                        ></c-step-app-setup>
+                    </template>
+
+                    <template if:true={isStep2}>
+                        <c-step-slack-setup enabled={slackEnabled} complete={slackSetupComplete} onproviderchange={handleProviderChange} onsetupstatuschange={handleSetupStatusChange}></c-step-slack-setup>
+                    </template>
+
+                    <template if:true={isStep3}>
+                        <c-step-teams-setup enabled={microsoftEnabled} complete={microsoftSetupComplete} onproviderchange={handleProviderChange} onsetupstatuschange={handleSetupStatusChange}></c-step-teams-setup>
+                    </template>
+
+                    <template if:true={isStep4}>
+                        <c-step-review
+                            deployment-users={deploymentUsers}
+                            enable-approval={enableApproval}
+                            approval-users={approvalUsers}
+                            initial-run-window={initialRunWindow}
+                            slack-enabled={slackEnabled}
+                            microsoft-enabled={microsoftEnabled}
+                            slack-setup-complete={slackSetupComplete}
+                            microsoft-setup-complete={microsoftSetupComplete}
+                            slack-identity={slackIdentity}
+                            microsoft-identity={microsoftIdentity}
+                        ></c-step-review>
+                    </template>
+                </main>
+
+                <c-wizard-navigation
+                    current-step-index={currentStepIndex}
+                    total-steps={totalSteps}
+                    completed-steps={completedSteps}
+                    next-label={nextButtonLabel}
+                    is-loading={isSaving}
+                    onback={handleBack}
+                    onnext={handleNext}
+                ></c-wizard-navigation>
+            </div>
+
+            <!-- Right aside -->
+            <aside class="gsw-aside" aria-label="Setup guidance and progress">
+                <c-wizard-help-panel
+                    title={currentStepData.helpTitle}
+                    items={currentStepData.helpItems}
+                ></c-wizard-help-panel>
+
+                <c-wizard-setup-progress
+                    current-step-index={currentStepIndex}
+                    total-steps={totalSteps}
+                    completed-steps={completedSteps}
+                ></c-wizard-setup-progress>
+
+                <c-wizard-setup-overview
+                    steps={steps}
+                    current-step-index={currentStepIndex}
+                ></c-wizard-setup-overview>
+            </aside>
+        </template>
+        </template>
+
+    </div>
+</template>

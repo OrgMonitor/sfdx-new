@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Un_Justified_Change_Logs</fullName>
+    <columns>NAME</columns>
+    <columns>Changed_By_User__c</columns>
+    <columns>Details__c</columns>
+    <columns>Justification__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Justification__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Non_Compliant__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Un-Justified Change Logs</label>
+</ListView>

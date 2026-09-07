@@ -1,0 +1,52 @@
+.wsp-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wsp-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0 0 1rem 0;
+    align-self: flex-start;
+}
+
+.wsp-chart-wrapper {
+    width: 7rem;
+    height: 7rem;
+}
+
+.wsp-donut {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.wsp-progress {
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.wsp-center-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    fill: #181818;
+    font-family: inherit;
+}
+
+.wsp-center-of {
+    font-size: 0.65rem;
+    fill: #777;
+    font-family: inherit;
+}
+
+.wsp-percent-label {
+    font-size: 0.8125rem;
+    color: #555;
+    margin: 0.625rem 0 0;
+    text-align: center;
+}

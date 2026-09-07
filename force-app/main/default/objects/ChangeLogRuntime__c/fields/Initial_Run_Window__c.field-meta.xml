@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Run_Window__c</fullName>
+    <description>This field is used to represent number of days to go back for the first run or when the last run timestamp is empty</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of days to go back for the first run.</inlineHelpText>
+    <label>Initial Run Window</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

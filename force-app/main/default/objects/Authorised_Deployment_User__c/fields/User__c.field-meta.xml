@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The active Salesforce user authorised to perform deployment work during the window.</description>
+    <label>Salesforce User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Authorised_Deployment_Windows</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

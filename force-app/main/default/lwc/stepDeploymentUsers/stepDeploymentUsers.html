@@ -1,0 +1,63 @@
+<template>
+    <section class="sdu-section" aria-labelledby="sdu-heading">
+        <h2 id="sdu-heading" class="sdu-title">
+            Step 2 of 8: Identify Deployment / CI-CD Users
+        </h2>
+        <p class="sdu-description">
+            Select the users or integration accounts that your organization uses for deployments
+            or CI/CD operations. We will treat changes made by these users as system deployments.
+        </p>
+
+        <div class="sdu-field-group">
+            <div class="sdu-field-header">
+                <label class="sdu-field-label" for="deployment-user-search">
+                    Deployment / CI-CD Users
+                </label>
+                <button
+                    type="button"
+                    class="sdu-info-btn"
+                    aria-label="More information about deployment CI-CD users"
+                    aria-expanded={isTooltipOpen}
+                    aria-controls="sdu-tooltip"
+                    onclick={toggleTooltip}
+                >
+                    <svg viewBox="0 0 20 20" aria-hidden="true" class="sdu-info-icon">
+                        <circle cx="10" cy="10" r="9" stroke="#777" stroke-width="1.5" fill="none"/>
+                        <text x="10" y="15" text-anchor="middle" font-size="12" fill="#777" font-family="sans-serif">i</text>
+                    </svg>
+                </button>
+                <template if:true={isTooltipOpen}>
+                    <div
+                        id="sdu-tooltip"
+                        class="sdu-tooltip"
+                        role="tooltip"
+                    >
+                        Users or integration accounts performing automated deployments.
+                        Changes by these accounts will be labeled as system deployments
+                        and excluded from policy violation checks.
+                    </div>
+                </template>
+            </div>
+
+            <c-user-token-search
+                id="deployment-user-search"
+                selected-items={selectedUsers}
+                placeholder="Search users or integration accounts..."
+                onselectionchange={handleSelectionChange}
+            ></c-user-token-search>
+        </div>
+
+        <div class="sdu-info-box" role="note" aria-label="Configuration note">
+            <span class="sdu-info-box-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" class="sdu-blue-info-icon">
+                    <circle cx="10" cy="10" r="9" fill="#1565c0"/>
+                    <text x="10" y="15" text-anchor="middle" font-size="12" fill="#fff" font-family="sans-serif">i</text>
+                </svg>
+            </span>
+            <div class="sdu-info-box-text">
+                <p>Only users you select here will be considered as automated deployments.</p>
+                <p>You can add or modify these later from <strong>Governance Settings</strong>.</p>
+            </div>
+        </div>
+    </section>
+</template>

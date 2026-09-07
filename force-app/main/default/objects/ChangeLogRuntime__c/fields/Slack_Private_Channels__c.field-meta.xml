@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Slack_Private_Channels__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Slack Private Channels</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

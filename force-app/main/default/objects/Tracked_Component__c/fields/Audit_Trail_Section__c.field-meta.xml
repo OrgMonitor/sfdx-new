@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audit_Trail_Section__c</fullName>
+    <label>Audit Trail Section</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apex Class</fullName>
+                <default>false</default>
+                <label>Apex Class</label>
+            </value>
+            <value>
+                <fullName>Classes</fullName>
+                <default>false</default>
+                <label>Classes</label>
+            </value>
+            <value>
+                <fullName>Flows</fullName>
+                <default>false</default>
+                <label>Flows</label>
+            </value>
+            <value>
+                <fullName>Profile</fullName>
+                <default>false</default>
+                <label>Profile</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

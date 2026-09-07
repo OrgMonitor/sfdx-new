@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>profileFlsChangedStandard</label>
+    <protected>false</protected>
+    <values>
+        <field>Action_Score__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">profileFlsChangedStandard</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Decay_Eligible__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Ignore__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Impact_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Is_Security_Relevant__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Regex_Pattern__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Score_Weight__c</field>
+        <value xsi:type="xsd:double">14.0</value>
+    </values>
+    <values>
+        <field>Section__c</field>
+        <value xsi:type="xsd:string">Manage Users</value>
+    </values>
+    <values>
+        <field>Security_Impact_Category__c</field>
+        <value xsi:type="xsd:string">Data Exposure</value>
+    </values>
+    <values>
+        <field>Security_Weight__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Severity__c</field>
+        <value xsi:type="xsd:string">HIGH</value>
+    </values>
+    <values>
+        <field>Sort_Order__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

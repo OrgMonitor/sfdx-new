@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Change Action Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Change Action Rules</value>
+    </caseValues>
+    <layouts>
+        <layout>Change Action Rule Layout</layout>
+        <sections>
+            <label><!-- Classification --></label>
+            <section>Classification</section>
+        </sections>
+        <sections>
+            <label><!-- Extraction --></label>
+            <section>Extraction</section>
+        </sections>
+        <sections>
+            <label><!-- Governance and Security --></label>
+            <section>Governance and Security</section>
+        </sections>
+        <sections>
+            <label><!-- Matching and Order --></label>
+            <section>Matching and Order</section>
+        </sections>
+        <sections>
+            <label><!-- Narrative and Impact --></label>
+            <section>Narrative and Impact</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

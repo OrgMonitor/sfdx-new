@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Deployment Role --></label>
+    <name>Deployment_Role__c</name>
+    <picklistValues>
+        <masterLabel>Administrator</masterLabel>
+        <translation><!-- Administrator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CI/CD User</masterLabel>
+        <translation><!-- CI/CD User --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Data Migration</masterLabel>
+        <translation><!-- Data Migration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developer</masterLabel>
+        <translation><!-- Developer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Release Manager</masterLabel>
+        <translation><!-- Release Manager --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

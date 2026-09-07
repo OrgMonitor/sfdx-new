@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_IP__c</fullName>
+    <description>Public source IP recorded by Salesforce for the effective actor’s selected recent successful login.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Public source IP recorded by Salesforce for the effective actor’s selected recent successful login.</inlineHelpText>
+    <label>Source IP</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>deploymentWindowsWorkspace</componentName>
+                <identifier>deploymentWindowsWorkspaceRecordDetail</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Deployment Window Record Page</masterLabel>
+    <sobjectType>Deployment_Window__c</sobjectType>
+    <template>
+        <name>flexipage:recordHomeSingleColNoHeaderTemplateDesktop</name>
+    </template>
+    <type>RecordPage</type>
+</FlexiPage>

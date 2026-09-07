@@ -1,0 +1,118 @@
+<template>
+    <div class="uts-wrapper">
+        <div
+            class="uts-container"
+            role="none"
+            onclick={handleContainerClick}
+        >
+            <template for:each={displayTokens} for:item="token">
+                <span
+                    key={token.id}
+                    class="uts-token"
+                    role="group"
+                    aria-label={token.groupAriaLabel}
+                >
+                    <lightning-icon
+                        icon-name="standard:user"
+                        size="xx-small"
+                        aria-hidden="true"
+                        class="uts-token-icon"
+                    ></lightning-icon>
+                    <span class="uts-token-text">{token.label}</span>
+                    <button
+                        type="button"
+                        class="uts-token-remove"
+                        data-id={token.id}
+                        aria-label={token.removeAriaLabel}
+                        onclick={handleRemoveToken}
+                    >
+                        <lightning-icon
+                            icon-name="utility:close"
+                            size="xx-small"
+                            aria-hidden="true"
+                        ></lightning-icon>
+                    </button>
+                </span>
+            </template>
+
+            <input
+                type="text"
+                class="uts-input"
+                value={searchTerm}
+                placeholder={inputPlaceholder}
+                aria-label={inputAriaLabel}
+                aria-autocomplete="list"
+                aria-haspopup="listbox"
+                aria-controls={dropdownId}
+                aria-expanded={isDropdownOpenStr}
+                aria-activedescendant={activeDescendant}
+                aria-invalid={invalid}
+                role="combobox"
+                autocomplete="off"
+                oninput={handleInput}
+                onkeydown={handleKeydown}
+                onfocus={handleFocus}
+                onblur={handleBlur}
+            />
+
+            <span class="uts-search-icon" aria-hidden="true">
+                <template if:false={isSearching}>
+                    <lightning-icon icon-name="utility:search" size="x-small" aria-hidden="true"></lightning-icon>
+                </template>
+                <template if:true={isSearching}>
+                    <lightning-spinner size="x-small" alternative-text="Searching"></lightning-spinner>
+                </template>
+            </span>
+        </div>
+
+        <template if:true={isDropdownOpen}>
+            <ul
+                id={dropdownId}
+                class="uts-dropdown"
+                role="listbox"
+                aria-label="User search results"
+            >
+                <template if:true={hasResults}>
+                    <template for:each={filteredItems} for:item="item">
+                        <li
+                            key={item.id}
+                            id={item.optionId}
+                            class={item.cssClass}
+                            role="option"
+                            aria-selected="false"
+                            data-id={item.id}
+                            data-label={item.label}
+                            onmousedown={handleSelectItem}
+                        >
+                            <lightning-icon
+                                icon-name="standard:user"
+                                size="x-small"
+                                aria-hidden="true"
+                                class="uts-result-icon"
+                            ></lightning-icon>
+                            <span class="uts-result-label">{item.label}</span>
+                            <span class="uts-result-type">{item.sublabel}</span>
+                        </li>
+                    </template>
+                </template>
+                <template if:false={hasResults}>
+                    <template if:false={isSearching}>
+                        <li class="uts-no-results" role="option" aria-disabled="true">
+                            <template if:true={hasSearchTerm}>
+                                No users found matching &ldquo;{searchTerm}&rdquo;
+                            </template>
+                            <template if:false={hasSearchTerm}>
+                                Type to search users&hellip;
+                            </template>
+                        </li>
+                    </template>
+                </template>
+            </ul>
+        </template>
+
+        <template if:true={searchError}>
+            <p class="uts-error" role="alert">{searchError}</p>
+        </template>
+        <span class="uts-assistive" role="status" aria-live="polite" aria-atomic="true">{statusMessage}</span>
+    </div>
+</template>

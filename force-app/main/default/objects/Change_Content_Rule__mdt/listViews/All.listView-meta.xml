@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Priority__c</columns>
+    <columns>Active__c</columns>
+    <columns>Primary_Area_Override__c</columns>
+    <columns>Severity_Override__c</columns>
+    <columns>Metadata_Type_Override__c</columns>
+    <columns>Change_Operation_Override__c</columns>
+    <columns>Critical_Security_Threat__c</columns>
+    <columns>Ignore__c</columns>
+    <columns>Review_Required__c</columns>
+    <columns>Redact_Sensitive_Data__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,62 @@
+<template>
+    <section class="sw-section" aria-labelledby="sw-heading">
+        <div class="sw-hero">
+            <div class="sw-hero-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" class="sw-shield-svg">
+                    <path d="M32 4L8 14v18c0 15.5 10.5 30 24 33 13.5-3 24-17.5 24-33V14L32 4z" fill="#0b6e31"/>
+                    <path d="M26 36l-8-8 3-3 5 5 12-12 3 3z" fill="#fff"/>
+                </svg>
+            </div>
+            <div class="sw-hero-text">
+                <h2 id="sw-heading" class="sw-title">Welcome to Org Monitor</h2>
+                <p class="sw-subtitle">
+                    Core monitoring takes only a few minutes to configure. Optional Slack and Microsoft Teams
+                    connections may require assistance from your collaboration-platform administrator.
+                </p>
+            </div>
+        </div>
+
+        <div class="sw-divider" aria-hidden="true"></div>
+
+        <h3 class="sw-section-heading">What you&apos;ll configure</h3>
+        <ul class="sw-steps-list" role="list">
+            <li class="sw-step-item" role="listitem">
+                <span class="sw-step-num" aria-hidden="true">1</span>
+                <div class="sw-step-body">
+                    <strong class="sw-step-name">App Setup</strong>
+                    <p class="sw-step-desc">
+                        Configure CI/CD users, deployment-window approvals and the initial monitoring period.
+                    </p>
+                </div>
+            </li>
+            <li class="sw-step-item" role="listitem">
+                <span class="sw-step-num" aria-hidden="true">2</span>
+                <div class="sw-step-body">
+                    <strong class="sw-step-name">Slack Notification Setup</strong>
+                    <p class="sw-step-desc">
+                        Optionally connect a Slack workspace and select a channel for setup-change notifications.
+                    </p>
+                </div>
+            </li>
+            <li class="sw-step-item" role="listitem"><span class="sw-step-num" aria-hidden="true">3</span><div class="sw-step-body"><strong class="sw-step-name">Microsoft Teams Notification Setup</strong><p class="sw-step-desc">Optionally connect Microsoft Teams and select a Team and channel.</p></div></li>
+            <li class="sw-step-item" role="listitem"><span class="sw-step-num" aria-hidden="true">4</span><div class="sw-step-body"><strong class="sw-step-name">Review &amp; Activate</strong><p class="sw-step-desc">Review all selections and activate monitoring.</p></div></li>
+        </ul>
+
+        <div class="sw-divider" aria-hidden="true"></div>
+
+        <h3 class="sw-section-heading">Why governance matters</h3>
+        <ul class="sw-benefits-list" role="list">
+            <template for:each={benefits} for:item="benefit">
+                <li key={benefit.id} class="sw-benefit-item" role="listitem">
+                    <span class="sw-benefit-icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16">
+                            <circle cx="8" cy="8" r="7" fill="#0b6e31"/>
+                            <path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                    <span>{benefit.label}</span>
+                </li>
+            </template>
+        </ul>
+    </section>
+</template>

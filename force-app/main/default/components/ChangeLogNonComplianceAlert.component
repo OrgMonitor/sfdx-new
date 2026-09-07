@@ -1,0 +1,112 @@
+<apex:component layout="none" access="global">
+    <apex:attribute name="changeLogs" description="List of non-compliant Change_Log__c records to render in the alert table"
+                     type="Change_Log__c[]" required="false"/>
+    <apex:attribute name="alertTitle" description="Title shown in the red banner"
+                     type="String" required="false" default="Non-Compliant Change Detected"/>
+    <apex:attribute name="justificationText" description="Optional justification / explanation text shown below the banner"
+                     type="String" required="false" default=""/>
+    <apex:attribute name="remainingCount" description="Number of additional non-compliant records not shown in this table (0 = none)"
+                     type="Integer" required="false" default="0"/>
+    <apex:attribute name="listViewUrl" description="URL to the full list view of non-compliant records, shown when remainingCount > 0"
+                     type="String" required="false" default=""/>
+    
+    <!-- Derives the org's base URL purely from a VF global variable, no Apex/param passing needed -->
+    <apex:variable var="orgBaseUrl" value="{!LEFT($Api.Partner_Server_URL_600, FIND('/services', $Api.Partner_Server_URL_600))}"/>
+
+<table width="100%" cellpadding="0" cellspacing="0" style="max-width:700px;margin:0 auto;font-family:Arial, Helvetica, sans-serif;border-collapse:collapse;">
+
+    <!-- Alert banner -->
+    <tr>
+        <td style="background-color:#B71C1C;padding:16px 20px;border-radius:6px 6px 0 0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width:34px;vertical-align:middle;">
+                        <span style="font-size:24px;line-height:1;">&#9888;</span>
+                    </td>
+                    <td style="vertical-align:middle;">
+                        <span style="color:#ffffff;font-size:17px;font-weight:bold;">{!alertTitle}</span><br/>
+                        <span style="color:#FFCDD2;font-size:12px;">The change(s) below were flagged as non-compliant and require your attention.</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Justification block (only renders if text is supplied) -->
+    <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(justificationText))}">
+    <tr>
+        <td style="background-color:#FFF3F3;border-left:4px solid #B71C1C;border-right:1px solid #F5C6C6;padding:12px 20px;">
+            <span style="font-size:13px;color:#7A1717;font-weight:bold;">Action:</span>
+            <div style="font-size:13px;color:#5A1212;margin-top:4px;">Open each record and provide the justification on record belongs to you</div>
+        </td>
+    </tr>
+    </apex:outputPanel>
+
+    <!-- Data table -->
+    <tr>
+        <td style="border:1px solid #F5C6C6;border-top:none;padding:0;">
+            <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-size:12px;">
+                <tr style="background-color:#FBE4E4;">
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Change Log</th>
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Changed By</th>
+					<th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Section</th>
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Action</th>
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Non-Compliance Reason</th>
+               		<th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Severity</th>
+                	<th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">IP Address</th>
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Location</th>
+                    <th align="left" style="border-bottom:2px solid #B71C1C;color:#7A1717;white-space:nowrap;">Date/Time</th>
+                </tr>
+
+                <apex:repeat value="{!changeLogs}" var="log">
+                <tr style="background-color:#FFFFFF;border-bottom:1px solid #F0DADA;">
+                    <td>
+                        <apex:outputLink value="/{!log.Id}" style="color:#B71C1C;font-weight:bold;text-decoration:underline;">
+                            {!log.Name}
+                        </apex:outputLink>
+                    </td>
+                    <td>{!log.Changed_By_User__r.Name}</td>
+                    <td>{!log.Section__c}</td>
+                    <td>{!log.Action__c}</td>
+                    <td>{!log.Non_Compliant_Reason__c}</td>
+                    <td>
+                        <span style="display:inline-block;padding:2px 9px;border-radius:10px;color:#ffffff;font-size:11px;font-weight:bold;white-space:nowrap;background-color:{!IF(log.Severity__c='Critical','#8B0000',IF(log.Severity__c='High','#D32F2F',IF(log.Severity__c='Medium','#F57C00',IF(log.Severity__c='Low','#FBC02D','#9E9E9E'))))};">
+                            {!log.Severity__c}
+                        </span>
+                    </td>
+                    <td>{!log.IP_Address__c}</td>
+                    <td>
+                        {!log.User_Location_City__c}<apex:outputText value=", " rendered="{!NOT(ISBLANK(log.User_Location_City__c))}"/>
+                        {!log.User_Location_State__c}<apex:outputText value=", " rendered="{!NOT(ISBLANK(log.User_Location_State__c))}"/>
+                        {!log.User_Location_Country__c}
+                    </td>
+                    <td>
+                        <apex:outputField value="{!log.Log_Created_Date__c}"/>
+                    </td>
+                </tr>
+                </apex:repeat>
+            </table>
+        </td>
+    </tr>
+
+    <!-- See More link (only when there are more records than shown above) -->
+    <!--<apex:outputPanel layout="none" rendered="{!remainingCount > 0}">-->
+        <tr>
+            <td style="background-color:#FBE4E4;border:1px solid #F5C6C6;border-top:none;padding:12px 20px;text-align:center;">
+                <apex:outputLink value="{!orgBaseUrl}lightning/o/Change_Log__c/list?filterName=Un_Justified_Change_Logs" style="color:#B71C1C;font-weight:bold;font-size:13px;text-decoration:underline;">
+                    Go to list &#8594;
+                </apex:outputLink>
+            </td>
+        </tr>
+    <!--</apex:outputPanel>-->
+    
+        <!-- Footer -->
+        <tr>
+            <td style="background-color:#FAFAFA;border:1px solid #EEEEEE;border-top:none;padding:12px 20px;border-radius:0 0 6px 6px;">
+                <span style="font-size:11px;color:#777777;">
+                    This is an automated compliance notification. Please review the change(s) above. If you believe this was flagged in error, contact your Salesforce administrator.
+                </span>
+            </td>
+        </tr>
+    </table>
+</apex:component>

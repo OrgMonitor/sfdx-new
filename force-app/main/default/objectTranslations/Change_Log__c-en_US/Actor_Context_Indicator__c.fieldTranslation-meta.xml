@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Shows whether the effective actor was delegated, a deployment user or unresolved. --></help>
+    <label><!-- Actor Context --></label>
+    <name>Actor_Context_Indicator__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<apex:page standardController="Change_Log__c" recordSetVar="changes" extensions="ChangeLogBulkReviewExtension" lightningStylesheets="true" showHeader="true">
+    <apex:form ><apex:pageBlock title="Confirm Mark Unauthorised and Close"><apex:pageMessages />
+        <apex:outputPanel rendered="{!result = null}"><p>You selected <strong>{!selectedIds.size}</strong> Change Log record(s).</p><p>Confirm Mark Unauthorised and Close. No comments or additional input are required.</p><div class="slds-m-top_medium"><apex:commandButton value="Confirm" action="{!apply}"/><apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/></div></apex:outputPanel>
+        <apex:outputPanel rendered="{!result != null}"><p><strong>{!result.successCount}</strong> succeeded; <strong>{!result.failureCount}</strong> failed.</p><apex:repeat value="{!result.errors}" var="message"><div>{!HTMLENCODE(message)}</div></apex:repeat><div class="slds-m-top_medium"><apex:commandButton value="Return to Change Logs" action="{!cancel}" immediate="true"/></div></apex:outputPanel>
+    </apex:pageBlock></apex:form>
+</apex:page>

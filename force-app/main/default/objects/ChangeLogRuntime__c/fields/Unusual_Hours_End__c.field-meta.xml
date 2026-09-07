@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unusual_Hours_End__c</fullName>
+    <defaultValue>&quot;06:00&quot;</defaultValue>
+    <description>Organization-local end time for unusual-hours setup change tracking.</description>
+    <externalId>false</externalId>
+    <label>Unusual Hours End</label>
+    <length>5</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

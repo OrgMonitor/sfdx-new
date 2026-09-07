@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity__c</fullName>
+    <description>he severity classification assigned to this action code when it appears in the Setup Audit Trail. Drives prioritization, alerting, and compliance reporting on the Audit_Trail__c object. Accepted values are LOW (routine or informational activity), MEDIUM (notable but low-risk change), HIGH (significant configuration or access change requiring review), and CRITICAL (high-risk change that may indicate a compliance violation or unauthorized access and should trigger immediate escalation).</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>he severity classification assigned to this action code when it appears in the Setup Audit Trail. Drives prioritization, alerting, and compliance reporting on the Audit_Trail__c object. Accepted values are LOW (routine or informational activity), MEDIUM (notable but low-risk change), HIGH (significant configuration or access change requiring review), and CRITICAL (high-risk change that may indicate a compliance violation or unauthorized access and should trigger immediate escalation).</inlineHelpText>
+    <label>Severity</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LOW</fullName>
+                <default>true</default>
+                <label>LOW</label>
+            </value>
+            <value>
+                <fullName>MEDIUM</fullName>
+                <default>false</default>
+                <label>MEDIUM</label>
+            </value>
+            <value>
+                <fullName>HIGH</fullName>
+                <default>false</default>
+                <label>HIGH</label>
+            </value>
+            <value>
+                <fullName>CRITICAL</fullName>
+                <default>false</default>
+                <label>CRITICAL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

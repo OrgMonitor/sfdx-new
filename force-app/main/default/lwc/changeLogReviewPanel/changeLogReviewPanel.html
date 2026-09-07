@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Change review" icon-name="standard:approval">
+        <div class="slds-p-horizontal_medium" aria-live="polite"><p class="review-message">{message}</p></div>
+        <template lwc:if={showActions}>
+            <div class="slds-p-around_medium slds-button-group" role="group" aria-label="Change Log review actions">
+                <template lwc:if={isReview}>
+                    <lightning-button variant="brand" label="Authorise and Close" data-action="AUTHORISE" onclick={act} disabled={busy}></lightning-button>
+                    <lightning-button variant="destructive" label="Mark Unauthorised and Close" data-action="UNAUTHORISE" onclick={act} disabled={busy}></lightning-button>
+                    <template lwc:if={mayCloseWithoutReview}><lightning-button label="Close Without Review" data-action="CLOSE_WITHOUT_REVIEW" onclick={act} disabled={busy}></lightning-button></template>
+                </template>
+                <template lwc:if={isClosedNonCompliant}><lightning-button label="Reopen Review" data-action="REOPEN" onclick={act} disabled={busy}></lightning-button></template>
+            </div>
+        </template>
+        <template lwc:if={busy}><lightning-spinner alternative-text="Updating review"></lightning-spinner></template>
+    </lightning-card>
+</template>

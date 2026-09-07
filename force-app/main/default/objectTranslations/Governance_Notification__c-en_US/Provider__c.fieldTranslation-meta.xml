@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Provider --></label>
+    <name>Provider__c</name>
+    <picklistValues>
+        <masterLabel>Microsoft Teams</masterLabel>
+        <translation><!-- Microsoft Teams --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slack</masterLabel>
+        <translation><!-- Slack --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

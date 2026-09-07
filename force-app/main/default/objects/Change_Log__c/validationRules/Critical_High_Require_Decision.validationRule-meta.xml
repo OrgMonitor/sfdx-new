@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Critical_High_Require_Decision</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Non_Compliant__c, ISPICKVAL(Lifecycle_Status__c, &quot;Closed&quot;), ISPICKVAL(Review_Outcome__c, &quot;Not Reviewed&quot;), OR(ISPICKVAL(Severity__c, &quot;CRITICAL&quot;), ISPICKVAL(Severity__c, &quot;HIGH&quot;)))</errorConditionFormula>
+    <errorMessage>Critical and High non-compliant changes require an Authorised or Unauthorised decision.</errorMessage>
+</ValidationRule>

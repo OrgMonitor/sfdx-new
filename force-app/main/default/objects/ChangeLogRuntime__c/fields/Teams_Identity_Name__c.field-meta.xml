@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teams_Identity_Name__c</fullName>
+    <description>Display name for the Microsoft account that authorized Org Monitor.</description>
+    <externalId>false</externalId>
+    <label>Teams Identity Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

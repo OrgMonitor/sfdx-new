@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Security_Relevant__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Quick filter — excludes cosmetic/UI-only actions from scoring entirely</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Is Security Relevant</label>
+    <type>Checkbox</type>
+</CustomField>

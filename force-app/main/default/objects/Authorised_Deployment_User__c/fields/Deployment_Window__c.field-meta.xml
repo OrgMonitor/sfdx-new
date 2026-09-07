@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Window__c</fullName>
+    <description>The Deployment Window for which this user is authorised.</description>
+    <label>Deployment Window</label>
+    <referenceTo>Deployment_Window__c</referenceTo>
+    <relationshipLabel>Authorised Deployment Users</relationshipLabel>
+    <relationshipName>Authorised_Deployment_Users</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

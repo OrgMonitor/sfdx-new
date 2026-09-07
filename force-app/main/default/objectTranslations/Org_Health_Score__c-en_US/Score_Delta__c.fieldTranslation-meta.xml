@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Change from last period (Overall_Score__c - Previous_Score__c) --></help>
+    <label><!-- Score Delta --></label>
+    <name>Score_Delta__c</name>
+</CustomFieldTranslation>

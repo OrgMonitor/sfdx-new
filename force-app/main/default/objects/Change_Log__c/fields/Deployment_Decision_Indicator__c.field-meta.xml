@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Decision_Indicator__c</fullName>
+    <description>Visual deployment-window decision mapped from the stable compliance reason code.</description>
+    <externalId>false</externalId>
+    <formula>CASE(Compliance_Reason_Code__c, &quot;APPROVED_WINDOW_NOMINATED_USER&quot;, &quot;🗓️ Approved Window&quot;, &quot;WINDOW_APPROVAL_NOT_REQUIRED&quot;, &quot;🗓️ Approval Not Required&quot;, &quot;SANDBOX_WINDOW_SKIP&quot;, &quot;🧪 Sandbox Window Skip&quot;, &quot;NO_DEPLOYMENT_WINDOW&quot;, &quot;🚫 Outside Window&quot;, &quot;WINDOW_NOT_APPROVED&quot;, &quot;⏳ Window Not Approved&quot;, &quot;USER_NOT_NOMINATED&quot;, &quot;🚷 User Not Nominated&quot;, &quot;INVALID_WINDOW_CONFIGURATION&quot;, &quot;⚠️ Invalid Window&quot;, &quot;&quot;, &quot;⚪ Not Evaluated&quot;, &quot;⚠️ Other Decision&quot;)</formula>
+    <inlineHelpText>Shows the deployment-window outcome without interpreting readable reason text.</inlineHelpText>
+    <label>Deployment Decision</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

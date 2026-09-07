@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_as_Unauthorised</fullName>
+    <columns>NAME</columns>
+    <columns>Log_Created_Date__c</columns>
+    <columns>Change_Summary__c</columns>
+    <columns>Changed_By_User__c</columns>
+    <columns>Component_Name__c</columns>
+    <columns>Severity__c</columns>
+    <columns>Non_Compliant__c</columns>
+    <columns>Lifecycle_Status__c</columns>
+    <columns>Review_Outcome__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Lifecycle_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Review_Outcome__c</field>
+        <operation>equals</operation>
+        <value>Unauthorised</value>
+    </filters>
+    <label>Closed as Unauthorised</label>
+</ListView>

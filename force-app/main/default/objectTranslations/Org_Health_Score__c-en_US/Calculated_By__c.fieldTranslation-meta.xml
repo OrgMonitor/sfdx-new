@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Calculated By --></label>
+    <name>Calculated_By__c</name>
+    <picklistValues>
+        <masterLabel>Manual</masterLabel>
+        <translation><!-- Manual --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scheduled Job</masterLabel>
+        <translation><!-- Scheduled Job --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trigger</masterLabel>
+        <translation><!-- Trigger --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

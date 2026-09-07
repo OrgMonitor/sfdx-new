@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Timing_Indicator__c</fullName>
+    <description>Displays whether the source change occurred during configured unusual hours and outside a deployment window.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        Unusual_Hours__c,
+        Compliance_Reason_Code__c = &quot;NO_DEPLOYMENT_WINDOW&quot;
+    ),
+    &quot;🌙 Odd hours • Outside deployment window&quot;,
+    IF(
+        Unusual_Hours__c,
+        &quot;🌙 Odd hours&quot;,
+        &quot;☀️ Standard hours&quot;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Change Timing</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

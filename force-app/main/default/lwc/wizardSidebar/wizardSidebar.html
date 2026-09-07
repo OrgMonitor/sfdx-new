@@ -1,0 +1,72 @@
+<template>
+    <div class="wsb-sidebar">
+        <!-- Brand header -->
+        <div class="wsb-brand" aria-label="Org Monitor setup wizard">
+            <div class="wsb-logo" aria-hidden="true">
+                <svg viewBox="0 0 40 40" class="wsb-shield-svg" aria-hidden="true">
+                    <path
+                        d="M20 2L4 9v11c0 9.5 6.9 18.4 16 20.6C29.1 38.4 36 29.5 36 20V9L20 2z"
+                        fill="#0b6e31"
+                    />
+                    <path
+                        d="M17 27l-6-6 1.9-1.9 4.1 4.1 8.1-8.1L27 17l-10 10z"
+                        fill="#fff"
+                    />
+                </svg>
+            </div>
+            <div class="wsb-brand-text">
+                <span class="wsb-brand-title">Org Monitor</span>
+                <span class="wsb-brand-subtitle">Let&apos;s configure governance in your org</span>
+            </div>
+        </div>
+
+        <!-- Step navigation -->
+        <nav class="wsb-nav" aria-label="Setup wizard steps">
+            <ol class="wsb-step-list" role="list">
+                <template for:each={displaySteps} for:item="step">
+                    <li key={step.index} class={step.liClass} role="listitem">
+                        <button
+                            type="button"
+                            class={step.btnClass}
+                            aria-current={step.ariaCurrent}
+                            aria-label={step.ariaLabel}
+                            data-index={step.index}
+                            onclick={handleStepClick}
+                            disabled={step.isDisabled}
+                        >
+                            <span class={step.indicatorClass} aria-hidden="true">
+                                <template if:true={step.isCompleted}>
+                                    <svg viewBox="0 0 16 16" class="wsb-check-icon">
+                                        <path d="M6 12L2 8l1.4-1.4L6 9.2l6.6-6.6L14 4z" fill="currentColor"/>
+                                    </svg>
+                                </template>
+                                <template if:false={step.isCompleted}>
+                                    {step.number}
+                                </template>
+                            </span>
+                            <span class="wsb-step-label">{step.label}</span>
+                        </button>
+                    </li>
+                </template>
+            </ol>
+        </nav>
+
+        <!-- Why Governance panel -->
+        <div class="wsb-why-panel" aria-label="Why use governance">
+            <h3 class="wsb-why-title">Why Governance?</h3>
+            <ul class="wsb-why-list" role="list">
+                <template for:each={whyItems} for:item="item">
+                    <li key={item.id} class="wsb-why-item" role="listitem">
+                        <span class="wsb-why-check" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" class="wsb-why-icon">
+                                <circle cx="8" cy="8" r="7" fill="#0b6e31"/>
+                                <path d="M5.5 8l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                        </span>
+                        <span>{item.label}</span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

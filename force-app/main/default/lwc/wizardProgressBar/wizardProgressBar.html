@@ -1,0 +1,32 @@
+<template>
+    <section class="wpb-bar" aria-label="Wizard progress">
+        <ol class="wpb-list" role="list">
+            <template for:each={displaySteps} for:item="step">
+                <li key={step.index} class={step.liClass} role="listitem">
+                    <div class="wpb-step" aria-current={step.ariaCurrent} aria-label={step.ariaLabel}>
+                        <div class="wpb-connector-left" aria-hidden="true">
+                            <div class={step.leftLineClass}></div>
+                        </div>
+
+                        <div class={step.circleClass} aria-hidden="true">
+                            <template if:true={step.isCompleted}>
+                                <svg viewBox="0 0 14 14" class="wpb-check">
+                                    <path d="M2 7l4 4 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </template>
+                            <template if:false={step.isCompleted}>
+                                <span>{step.number}</span>
+                            </template>
+                        </div>
+
+                        <div class="wpb-connector-right" aria-hidden="true">
+                            <div class={step.rightLineClass}></div>
+                        </div>
+
+                        <span class={step.labelClass}>{step.label}</span>
+                    </div>
+                </li>
+            </template>
+        </ol>
+    </section>
+</template>

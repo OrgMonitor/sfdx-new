@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception_Type__c</fullName>
+    <description>The Apex exception type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Populated from e.getTypeName(), e.g. System.NullPointerException, System.DmlException</inlineHelpText>
+    <label>Exception Type</label>
+    <length>255</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

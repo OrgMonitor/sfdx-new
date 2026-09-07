@@ -1,0 +1,6 @@
+<messaging:emailTemplate subject="Non-Compliant Changes Detected" recipientType="User" relatedToType="Change_Log__c">
+<messaging:plainTextEmailBody >
+Congratulations!
+This is your new Visualforce Email Template.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

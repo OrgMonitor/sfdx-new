@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Location_City__c</fullName>
+    <description>Approximate location associated with the effective actor’s recent login IP, as returned by Salesforce LoginGeo. It may represent an ISP, VPN, proxy, mobile network or internet gateway location rather than the user’s physical location.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Approximate location associated with the effective actor’s recent login IP, as returned by Salesforce LoginGeo. It may represent an ISP, VPN, proxy, mobile network or internet gateway location rather than the user’s physical location.</inlineHelpText>
+    <label>Approximate IP City</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

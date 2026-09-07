@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Decay multiplier applied based on event recency --></help>
+    <label><!-- Recency Decay Factor --></label>
+    <name>Recency_Decay_Factor__c</name>
+</CustomFieldTranslation>

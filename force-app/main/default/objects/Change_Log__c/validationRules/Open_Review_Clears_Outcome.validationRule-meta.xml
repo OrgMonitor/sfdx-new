@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Review_Clears_Outcome</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Lifecycle_Status__c, &quot;Review&quot;), NOT(ISBLANK(TEXT(Review_Outcome__c))))</errorConditionFormula>
+    <errorMessage>A change in Review cannot retain a previous Review Outcome.</errorMessage>
+</ValidationRule>

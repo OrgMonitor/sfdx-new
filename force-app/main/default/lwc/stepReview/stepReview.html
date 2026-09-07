@@ -1,0 +1,101 @@
+<template>
+    <section class="sr-section" aria-labelledby="sr-heading">
+        <h2 id="sr-heading" class="sr-title">Step 5 of 5: Review &amp; Activate</h2>
+        <p class="sr-intro">
+            Review your configuration below. Click <strong>Save &amp; Activate</strong> to save your
+            settings and start the hourly compliance scheduler.
+        </p>
+
+        <dl class="sr-summary">
+            <!-- Deployment Users -->
+            <div class="sr-row">
+                <dt class="sr-label">
+                    <span class="sr-label-icon" aria-hidden="true">
+                        <lightning-icon icon-name="standard:user" size="x-small" aria-hidden="true"></lightning-icon>
+                    </span>
+                    Deployment / CI-CD Users
+                </dt>
+                <dd class="sr-value">
+                    <template if:true={hasDeploymentUsers}>
+                        <ul class="sr-user-list" role="list">
+                            <template for:each={deploymentUsers} for:item="user">
+                                <li key={user.id} class="sr-user-chip" role="listitem">{user.label}</li>
+                            </template>
+                        </ul>
+                    </template>
+                    <template if:false={hasDeploymentUsers}>
+                        <span class="sr-empty">Not configured</span>
+                    </template>
+                </dd>
+            </div>
+
+            <div class="sr-row"><dt class="sr-label">Slack notifications</dt><dd class="sr-value">{slackStatus}</dd></div>
+            <div class="sr-row"><dt class="sr-label">Microsoft Teams notifications</dt><dd class="sr-value">{microsoftStatus}</dd></div>
+
+            <!-- Deployment Window Approval -->
+            <div class="sr-row">
+                <dt class="sr-label">
+                    <span class="sr-label-icon" aria-hidden="true">
+                        <lightning-icon icon-name="utility:check" size="x-small" aria-hidden="true"></lightning-icon>
+                    </span>
+                    Enable Approval for Deployment Window
+                </dt>
+                <dd class="sr-value">
+                    <span class={approvalBadgeClass}>{approvalLabel}</span>
+                </dd>
+            </div>
+
+            <!-- Approval Users (conditional) -->
+            <template if:true={enableApproval}>
+                <div class="sr-row sr-row--indented">
+                    <dt class="sr-label">Approval Users (added to Audit_Trail_Queue)</dt>
+                    <dd class="sr-value">
+                        <template if:true={hasApprovalUsers}>
+                            <ul class="sr-user-list" role="list">
+                                <template for:each={approvalUsers} for:item="user">
+                                    <li key={user.id} class="sr-user-chip" role="listitem">{user.label}</li>
+                                </template>
+                            </ul>
+                        </template>
+                        <template if:false={hasApprovalUsers}>
+                            <span class="sr-empty">No users selected</span>
+                        </template>
+                    </dd>
+                </div>
+            </template>
+
+            <!-- Historical Run Timeframe -->
+            <div class="sr-row">
+                <dt class="sr-label">
+                    <span class="sr-label-icon" aria-hidden="true">
+                        <lightning-icon icon-name="utility:clock" size="x-small" aria-hidden="true"></lightning-icon>
+                    </span>
+                    Historical Run Timeframe (First Run)
+                </dt>
+                <dd class="sr-value">
+                    <template if:true={initialRunWindow}>
+                        <span class="sr-badge sr-badge--neutral">{initialRunWindow} days</span>
+                    </template>
+                    <template if:false={initialRunWindow}>
+                        <span class="sr-empty">Not selected</span>
+                    </template>
+                </dd>
+            </div>
+        </dl>
+
+        <!-- What happens on activate -->
+        <div class="sr-activate-info" role="note" aria-label="What will happen on activation">
+            <span class="sr-activate-icon" aria-hidden="true">
+                <lightning-icon icon-name="utility:info" size="small" aria-hidden="true"></lightning-icon>
+            </span>
+            <div>
+                <p class="sr-activate-title">On Save &amp; Activate:</p>
+                <ul class="sr-activate-list" role="list">
+                    <li role="listitem">Settings are saved to the <strong>ChangeLogRuntime__c</strong> custom setting.</li>
+                    <li role="listitem">Approval users are synced to the <strong>Audit_Trail_Queue</strong> queue.</li>
+                    <li role="listitem">Org Monitor is scheduled to check setup changes every hour on the hour.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</template>

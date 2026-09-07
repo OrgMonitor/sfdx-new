@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decay_Eligible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether this action&apos;s score impact decays over time (see scoring logic below)</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Decay Eligible</label>
+    <type>Checkbox</type>
+</CustomField>

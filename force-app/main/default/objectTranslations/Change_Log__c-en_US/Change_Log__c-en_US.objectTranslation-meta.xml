@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Change Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Change Logs</value>
+    </caseValues>
+    <layouts>
+        <layout>Change Log Layout</layout>
+        <sections>
+            <label><!-- Actors &amp; Delegation --></label>
+            <section>Actors &amp; Delegation</section>
+        </sections>
+        <sections>
+            <label><!-- Change Overview --></label>
+            <section>Change Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Classification &amp; Source Evidence --></label>
+            <section>Classification &amp; Source Evidence</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance &amp; Deployment --></label>
+            <section>Compliance &amp; Deployment</section>
+        </sections>
+        <sections>
+            <label><!-- Recent Login Network &amp; Location --></label>
+            <section>Recent Login Network &amp; Location</section>
+        </sections>
+        <sections>
+            <label><!-- Review &amp; Follow-up --></label>
+            <section>Review &amp; Follow-up</section>
+        </sections>
+        <sections>
+            <label><!-- Risk &amp; Scoring --></label>
+            <section>Risk &amp; Scoring</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Review Lifecycle --></label>
+        <name>Review_Lifecycle</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- A closed non-compliant change must have a Review Outcome. --></errorMessage>
+        <name>Closed_Review_Requires_Outcome</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A compliant change must be Closed and Authorised. --></errorMessage>
+        <name>Compliant_Changes_Are_Authorised</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Critical and High non-compliant changes require an Authorised or Unauthorised decision. --></errorMessage>
+        <name>Critical_High_Require_Decision</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A change in Review cannot retain a previous Review Outcome. --></errorMessage>
+        <name>Open_Review_Clears_Outcome</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Authorise_and_Close --></label>
+        <name>Authorise_and_Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_Without_Review --></label>
+        <name>Close_Without_Review</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mark_Unauthorised_and_Close --></label>
+        <name>Mark_Unauthorised_and_Close</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Case_For_Non_Compliant__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enable this setting to automatically create a Case for non-compliant records. The Case will be assigned to the user who updated the setup object, who must provide a justification to resolve the issue.</description>
+    <label>Create Case For Non-Compliant?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

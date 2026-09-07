@@ -1,0 +1,44 @@
+<template>
+    <div class="wn-bar" role="group" aria-label="Wizard navigation">
+        <template if:false={isFirstStep}>
+            <button
+                type="button"
+                class="wn-btn wn-btn--back"
+                onclick={handleBack}
+                disabled={isLoading}
+                aria-label="Go to previous step"
+            >
+                <lightning-icon
+                    icon-name="utility:chevronleft"
+                    size="x-small"
+                    aria-hidden="true"
+                ></lightning-icon>
+                Back
+            </button>
+        </template>
+        <template if:true={isFirstStep}>
+            <span class="wn-spacer" aria-hidden="true"></span>
+        </template>
+
+        <button
+            type="button"
+            class="wn-btn wn-btn--next"
+            onclick={handleNext}
+            disabled={isLoading}
+            aria-label={nextAriaLabel}
+            aria-busy={isLoadingStr}
+        >
+            <template if:true={isLoading}>
+                <lightning-spinner size="x-small" alternative-text="Saving..." variant="inverse"></lightning-spinner>
+            </template>
+            {nextLabel}
+            <template if:false={isLoading}>
+                <lightning-icon
+                    icon-name="utility:chevronright"
+                    size="x-small"
+                    aria-hidden="true"
+                ></lightning-icon>
+            </template>
+        </button>
+    </div>
+</template>

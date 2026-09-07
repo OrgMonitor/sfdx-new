@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forwarded_For_IP__c</fullName>
+    <description>Forwarded IP recorded by Salesforce for the selected login when the connection passed through a proxy or intermediary. This value may be blank.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Forwarded IP recorded by Salesforce for the selected login when the connection passed through a proxy or intermediary. This value may be blank.</inlineHelpText>
+    <label>Forwarded For IP</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

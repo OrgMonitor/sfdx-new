@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>true</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Org Monitor</label>
+    <navType>Standard</navType>
+    <tabs>Setup</tabs>
+    <tabs>Change_Log__c</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>Tracked_Component__c</tabs>
+    <tabs>Deployment_Windows</tabs>
+    <tabs>Org_Health_Score__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Audi_Trail_Management_UtilityBar</utilityBar>
+</CustomApplication>

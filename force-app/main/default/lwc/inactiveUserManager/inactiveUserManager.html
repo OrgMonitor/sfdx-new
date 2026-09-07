@@ -1,0 +1,119 @@
+<template>
+    <lightning-card title="User Manager" icon-name="standard:user">
+        <div class="slds-p-around_medium">
+
+            <!-- Filter bar -->
+            <div class="slds-grid slds-gutters slds-m-bottom_medium slds-wrap">
+
+                <div class="slds-col slds-size_12-of-12 slds-medium-size_3-of-12">
+                    <lightning-radio-group
+                        label="Filter By"
+                        options={filterModeOptions}
+                        value={filterMode}
+                        type="button"
+                        onchange={handleFilterModeChange}>
+                    </lightning-radio-group>
+                </div>
+
+                <template if:true={isDaysMode}>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12">
+                        <lightning-input
+                            type="number"
+                            label="Days Since Last Login"
+                            value={days}
+                            min="1"
+                            max="999"
+                            onchange={handleDaysChange}>
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <template if:true={isDateMode}>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12">
+                        <lightning-input
+                            type="date"
+                            label="Last Login From"
+                            value={fromDate}
+                            max={today}
+                            onchange={handleFromDateChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12">
+                        <lightning-input
+                            type="date"
+                            label="Last Login To"
+                            value={toDate}
+                            max={today}
+                            onchange={handleToDateChange}>
+                        </lightning-input>
+                    </div>
+                </template>
+
+            </div>
+
+            <!-- Summary stats -->
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                <div class="slds-col">
+                    <div class="slds-box slds-text-align_center">
+                        <p class="slds-text-heading_medium">{totalCount}</p>
+                        <p class="slds-text-body_small slds-text-color_weak">Total Active</p>
+                    </div>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-box slds-text-align_center">
+                        <p class="slds-text-heading_medium">{neverLoggedInCount}</p>
+                        <p class="slds-text-body_small slds-text-color_weak">Never Logged In</p>
+                    </div>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-box slds-text-align_center">
+                        <p class="slds-text-heading_medium">{selectedCount}</p>
+                        <p class="slds-text-body_small slds-text-color_weak">Selected</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner
+                    alternative-text="Processing"
+                    size="small">
+                </lightning-spinner>
+            </template>
+
+            <!-- Data table -->
+            <lightning-datatable
+                key-field="Id"
+                data={users}
+                columns={columns}
+                selected-rows={selectedIds}
+                onrowselection={handleRowSelection}>
+            </lightning-datatable>
+
+            <!-- Action bar -->
+            <div class="slds-grid slds-grid_vertical-align-center slds-m-top_medium">
+                <div class="slds-col">
+                    <span class="slds-badge">{selectedCountLabel}</span>
+                </div>
+                <div class="slds-col slds-text-align_right">
+                    <lightning-button
+                        class="slds-m-right_small"
+                        variant="destructive-text"
+                        label="Deactivate Selected"
+                        icon-name="utility:user_role"
+                        onclick={handleDeactivateSelected}
+                        disabled={deactivateSelectedDisabled}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="destructive"
+                        label={deactivateAllLabel}
+                        icon-name="utility:ban"
+                        onclick={handleDeactivateAll}
+                        disabled={deactivateAllDisabled}>
+                    </lightning-button>
+                </div>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

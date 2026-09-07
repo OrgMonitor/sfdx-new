@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Action Required</masterLabel>
+        <translation><!-- Action Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed</masterLabel>
+        <translation><!-- Failed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation><!-- Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reconnection Required</masterLabel>
+        <translation><!-- Reconnection Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retry Scheduled</masterLabel>
+        <translation><!-- Retry Scheduled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sending</masterLabel>
+        <translation><!-- Sending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sent</masterLabel>
+        <translation><!-- Sent --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

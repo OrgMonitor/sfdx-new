@@ -1,0 +1,158 @@
+<template>
+    <section class="sas-section" aria-labelledby="sas-heading">
+        <h2 id="sas-heading" class="sas-title">Step 2 of 5: App Setup</h2>
+        <p class="sas-intro">Configure the core settings that govern how Org Monitor monitors your Salesforce org.</p>
+
+        <!-- ── 1. Deployment Users ── -->
+        <div class="sas-field-block">
+            <label class="sas-field-label" for="deployment-users-search">
+                Deployment / CI-CD Users <abbr title="required" aria-label="required">*</abbr>
+            </label>
+            <p class="sas-guidance" id="deployment-users-hint">
+                Select all CI/CD and deployment users. This will help us filter out changes made
+                by CI/CD pipelines or deployments from compliance violations.
+            </p>
+            <c-user-token-search
+                id="deployment-users-search"
+                label="Deployment and CI/CD users"
+                invalid={hasDeploymentError}
+                selected-items={deploymentUsers}
+                placeholder="Search users or integration accounts..."
+                onselectionchange={handleDeploymentUsersChange}
+                aria-describedby="deployment-users-hint"
+            ></c-user-token-search>
+            <template if:true={errors.deploymentUsers}>
+                <p class="sas-field-error" role="alert" id="deployment-users-error">
+                    {errors.deploymentUsers}
+                </p>
+            </template>
+        </div>
+
+        <!-- ── 2. Sandbox Deployment Window Setting ── -->
+        <section class="sas-field-block sas-sandbox-setting" aria-labelledby="sandbox-skip-heading">
+            <h3 id="sandbox-skip-heading" class="sas-section-heading">Skip Deployment Windows for Sandbox</h3>
+            <template if:true={isSandbox}>
+                <p class="sas-guidance" id="sandbox-skip-description">
+                    Sandbox environments may receive frequent deployments, making it impractical to create and approve a Deployment Window for every deployment. Enable this option to allow changes made by nominated deployment users to be treated as compliant without an approved Deployment Window.
+                </p>
+                <div class="sas-checkbox-row">
+                    <input
+                        type="checkbox"
+                        id="sandbox-skip-checkbox"
+                        class="sas-checkbox"
+                        checked={skipDeploymentWindowsForSandbox}
+                        onchange={handleSandboxSkipChange}
+                        aria-describedby="sandbox-skip-description sandbox-skip-guidance sandbox-skip-error"
+                        aria-invalid={hasSandboxSkipError}
+                    />
+                    <label class="sas-checkbox-label" for="sandbox-skip-checkbox">
+                        Treat changes by nominated deployment users as compliant without a Deployment Window
+                    </label>
+                </div>
+                <div id="sandbox-skip-guidance" class="sas-guidance-panel">
+                    <p><strong>When enabled:</strong></p>
+                    <ul>
+                        <li>Only changes made by nominated deployment users qualify.</li>
+                        <li>Changes made by other users remain subject to normal Deployment Window checks.</li>
+                        <li>Setup changes continue to be captured, classified and risk-assessed.</li>
+                        <li>Other Org Monitor governance checks continue normally.</li>
+                    </ul>
+                </div>
+                <template if:true={errors.sandboxSkip}>
+                    <p class="sas-field-error" role="alert" id="sandbox-skip-error">{errors.sandboxSkip}</p>
+                </template>
+            </template>
+            <template if:false={isSandbox}>
+                <p class="sas-guidance sas-unavailable" role="status">This option is available only in Salesforce sandboxes.</p>
+            </template>
+        </section>
+
+        <!-- ── 3. Deployment Window Approval ── -->
+        <div class="sas-field-block">
+            <div class="sas-checkbox-row">
+                <input
+                    type="checkbox"
+                    id="enable-approval-checkbox"
+                    class="sas-checkbox"
+                    checked={enableApproval}
+                    onchange={handleEnableApprovalChange}
+                    aria-describedby="enable-approval-hint"
+                />
+                <label class="sas-checkbox-label" for="enable-approval-checkbox">
+                    Enable approval for deployment window?
+                </label>
+            </div>
+            <p class="sas-guidance sas-guidance--indented" id="enable-approval-hint">
+                When enabled, changes to deployment windows require approval from designated users.
+            </p>
+
+            <template if:true={enableApproval}>
+                <div class="sas-conditional-block" aria-live="polite">
+                    <label class="sas-field-label" for="approval-users-search">
+                        Select the users who can approve your deployment windows
+                        <abbr title="required" aria-label="required">*</abbr>
+                    </label>
+                    <p class="sas-guidance" id="approval-users-hint">
+                        These users will be added to the <strong>Audit_Trail_Queue</strong> and notified
+                        when a deployment window change requires approval.
+                    </p>
+                    <c-user-token-search
+                        id="approval-users-search"
+                        label="Users who can approve deployment windows"
+                        invalid={hasApprovalError}
+                        selected-items={approvalUsers}
+                        placeholder="Search users..."
+                        onselectionchange={handleApprovalUsersChange}
+                        aria-describedby="approval-users-hint"
+                    ></c-user-token-search>
+                    <template if:true={errors.approvalUsers}>
+                        <p class="sas-field-error" role="alert">{errors.approvalUsers}</p>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <!-- ── 4. Historical Run Timeframe ── -->
+        <div class="sas-field-block">
+            <h3 class="sas-section-heading">Unusual hours</h3>
+            <p class="sas-guidance" id="unusual-hours-hint">
+                Defines the organization-local time range considered unusual for Salesforce setup changes.
+                Changes during these hours are highlighted, particularly when no deployment window covered the change.
+            </p>
+            <div class="sas-time-grid">
+                <lightning-input type="time" name="unusualHoursStart" label="Unusual Hours Start"
+                    value={unusualHoursStart} onchange={handleUnusualStartChange} required
+                    aria-describedby="unusual-hours-hint"></lightning-input>
+                <lightning-input type="time" name="unusualHoursEnd" label="Unusual Hours End"
+                    value={unusualHoursEnd} onchange={handleUnusualEndChange} required
+                    aria-describedby="unusual-hours-hint"></lightning-input>
+            </div>
+            <template if:true={errors.unusualHours}>
+                <p class="sas-field-error" role="alert">{errors.unusualHours}</p>
+            </template>
+        </div>
+
+        <!-- ── 5. Historical Run Timeframe ── -->
+        <div class="sas-field-block">
+            <lightning-combobox
+                name="initialRunWindow"
+                label="Historical run timeframe for the first run"
+                field-level-help="Select the number of days to track changes for the initial compliance run."
+                placeholder="Select timeframe..."
+                value={initialRunWindow}
+                options={runWindowOptions}
+                onchange={handleRunWindowChange}
+                required
+                aria-describedby="run-window-hint"
+                message-when-value-missing="Please select a timeframe."
+            ></lightning-combobox>
+            <p class="sas-guidance sas-guidance--below" id="run-window-hint">
+                Select the number of days you want to track changes for the first run.
+            </p>
+            <template if:true={errors.runWindow}>
+                <p class="sas-field-error" role="alert">{errors.runWindow}</p>
+            </template>
+        </div>
+
+    </section>
+</template>

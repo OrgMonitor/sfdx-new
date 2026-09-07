@@ -1,0 +1,133 @@
+.sw-section {
+    padding: 0;
+}
+
+.sw-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.sw-shield-svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    display: block;
+}
+
+.sw-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0 0 0.5rem 0;
+}
+
+.sw-subtitle {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.sw-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 1.5rem 0;
+}
+
+.sw-section-heading {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0 0 1rem 0;
+}
+
+/* What you'll configure */
+.sw-steps-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sw-step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+
+.sw-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: #0b6e31;
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.sw-step-body {
+    flex: 1;
+}
+
+.sw-step-name {
+    display: block;
+    font-size: 0.9375rem;
+    color: #181818;
+    margin-bottom: 0.25rem;
+}
+
+.sw-step-desc {
+    font-size: 0.8125rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Benefits */
+.sw-benefits-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.sw-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.sw-benefit-icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.sw-benefit-icon svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+}
+
+code {
+    font-family: monospace;
+    font-size: 0.8rem;
+    background: #f0faf0;
+    border: 1px solid #c8e6c9;
+    border-radius: 3px;
+    padding: 0.1rem 0.3rem;
+    color: #0b6e31;
+}

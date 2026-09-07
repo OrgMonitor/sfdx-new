@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Public source IP recorded by Salesforce for the effective actor’s selected recent successful login. --></help>
+    <label><!-- Source IP --></label>
+    <name>Source_IP__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Use this option for sandboxes with frequent deployments. It applies only to nominated deployment users and does not disable setup-change monitoring or other governance checks. --></help>
+    <label><!-- Skip Deployment Windows for Sandbox --></label>
+    <name>Skip_Deployment_Windows_For_Sandbox__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_Monitor_Highlights</fullName>
+    <fields>Name</fields>
+    <fields>Attention_Indicator__c</fields>
+    <fields>Severity_Indicator__c</fields>
+    <fields>Compliance_Indicator__c</fields>
+    <fields>Change_Timing_Indicator__c</fields>
+    <fields>Deployment_Decision_Indicator__c</fields>
+    <fields>Actor_Context_Indicator__c</fields>
+    <label>Org Monitor Highlights</label>
+</CompactLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>API-only access for automated processes to create/update Audit Trail, Exception Log, Component, and Org Health Score records, plus execute access to related Apex classes.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Change Log – Integration/Automation User</label>
+</PermissionSet>

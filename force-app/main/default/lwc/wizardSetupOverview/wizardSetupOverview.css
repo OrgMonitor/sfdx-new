@@ -1,0 +1,57 @@
+.wso-section {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+.wso-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0 0 0.875rem 0;
+}
+
+.wso-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.wso-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.wso-step-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.wso-status {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.wso-status--pending {
+    color: #777;
+}
+
+.wso-status--configured {
+    color: #0b6e31;
+    font-weight: 600;
+}
+
+.wso-more {
+    font-size: 1.25rem;
+    color: #999;
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding-top: 0.25rem;
+}

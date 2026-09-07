@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Create/edit Audit Trail, Exception Log, and Component records; read-only on Change Window, Org Health Score, Deployment Window. No config access. For analysts triaging non-compliance issues.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Change Log – Compliance Reviewer</label>
+</PermissionSet>

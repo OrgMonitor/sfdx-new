@@ -1,0 +1,18 @@
+<template>
+    <div class="wso-section" aria-labelledby="wso-heading">
+        <h3 id="wso-heading" class="wso-title">Setup Overview</h3>
+        <dl class="wso-list">
+            <template for:each={overviewItems} for:item="item">
+                <div key={item.label} class="wso-row">
+                    <dt class="wso-step-name">{item.label}</dt>
+                    <dd class={item.statusClass}>{item.configStatus}</dd>
+                </div>
+            </template>
+            <template if:true={hasMore}>
+                <div class="wso-more" aria-label={moreAriaLabel}>
+                    <span aria-hidden="true">&hellip;</span>
+                </div>
+            </template>
+        </dl>
+    </div>
+</template>

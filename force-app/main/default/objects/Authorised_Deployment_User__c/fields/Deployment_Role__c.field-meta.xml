@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Role__c</fullName>
+    <description>The responsibility this user performs during the deployment window.</description>
+    <label>Deployment Role</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CI/CD User</fullName>
+                <default>false</default>
+                <label>CI/CD User</label>
+            </value>
+            <value>
+                <fullName>Administrator</fullName>
+                <default>false</default>
+                <label>Administrator</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Release Manager</fullName>
+                <default>false</default>
+                <label>Release Manager</label>
+            </value>
+            <value>
+                <fullName>Data Migration</fullName>
+                <default>false</default>
+                <label>Data Migration</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

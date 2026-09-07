@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Approval_Process__c</fullName>
+    <description>If Enable Deployment Window Approval Process option is enabled in the custom setting then we need to activate the record via approval process. This field will use to determine whether to show the Submit for Approval button or Activate button on the DW record page.</description>
+    <formula>$Setup.ChangeLogRuntime__c.Enable_Deployment_Window_Approval__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Enable Approval Process</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

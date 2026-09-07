@@ -1,0 +1,51 @@
+.whp-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+.whp-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0b6e31;
+    margin: 0 0 0.875rem 0;
+}
+
+.whp-illustration {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.whp-svg {
+    width: 100%;
+    max-width: 9rem;
+    height: auto;
+}
+
+.whp-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.whp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.whp-bullet {
+    color: #0b6e31;
+    font-size: 1rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}

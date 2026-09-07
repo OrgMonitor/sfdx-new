@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtlClntAppGlobalOauthSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <callbackUrl>https://login.salesforce.com/services/oauth2/callback</callbackUrl>
+    <certificate>MIICsDCCAZgCCQDmNa/MW0TjZzANBgkqhkiG9w0BAQsFADAaMQswCQYDVQQGEwJJ
+TjELMAkGA1UECAwCTUgwHhcNMjYwODMxMDkxNjIwWhcNMzYwODI4MDkxNjIwWjAa
+MQswCQYDVQQGEwJJTjELMAkGA1UECAwCTUgwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDQtHDUAISPSIU6eGvFUWGpmF/S6h/DbbHQMGywj8UFkSpu9LAs
+LSCliGr5KtmObfuTqNUWNzMPB4uCciqbko7vskT0oRKBKtybpwAahf/Mz3T2K1lf
+no5wsIGF/ofYNx+3bm/VRgVbbE20OYNR7nDECT7694KpoAXbF0uPwfivka9VdB8s
+G90Q8HPta5hy2TKfK+NmLj1oPexFwsu2f9ldAK1Zf8vYyq9aczXzVyiZLaFd/eIp
+l1S1GfcS2gnndOyefO2cixLzeMajCjWDWXHmhC4uqFQIwc+arVlOTDQ3nmhcnd+N
+qjwn9UTJ1TAtE1DsDvZ8KTmzUXPbKBqQbruPAgMBAAEwDQYJKoZIhvcNAQELBQAD
+ggEBAMYHqqWexzRYy9+n//BwbmifmcBRdhD5R8yyW22fFnmaGULL7jmCfneC18XS
+c+ykF0f+zPM1c7AeNIq2TULUSBo6O3uOvLk4Hagmcr9hQR9t73SipsenmP4eETeK
+NbfgpMjZWA8MHqcB9YDV2bw3vkofMTkSkO2GDlzlM0ANk0VgXaC4JJwhCLXc/lKV
+2ZRIUuOznN/ymRPBwnACqi3krrxBuBKAGCaRjtcQwJVAFHbr4Wtcsnnlm131Xyix
+FaPMX8CP5pfC2CXdShNeZJWCj9mAjf4yVc4pa3AdO8HZ6nvcIxxv9vQPBe9Nyhvk
+i4v6Bam2TTM5eRih6ntaPP6n24Q=</certificate>
+    <consumerKey>3MVG9QJ.PEcCek9ZAGc4FIUAQQG0XkdBa63ab96dWJBbUfljs31OP9Fihc9oKofXtSW_UHkeYQWoJ4dfz1goP</consumerKey>
+    <externalClientApplication>Org_Monitor</externalClientApplication>
+    <isClientCredentialsFlowEnabled>false</isClientCredentialsFlowEnabled>
+    <isCodeCredFlowEnabled>false</isCodeCredFlowEnabled>
+    <isCodeCredPostOnly>false</isCodeCredPostOnly>
+    <isConsumerSecretOptional>true</isConsumerSecretOptional>
+    <isDPopEnabled>false</isDPopEnabled>
+    <isDeviceFlowEnabled>false</isDeviceFlowEnabled>
+    <isEnforceRefreshTokenTTL>true</isEnforceRefreshTokenTTL>
+    <isIntrospectAllTokens>false</isIntrospectAllTokens>
+    <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+    <isPkceRequired>true</isPkceRequired>
+    <isRefreshTokenRotationEnabled>true</isRefreshTokenRotationEnabled>
+    <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+    <isSecretRequiredForTokenExchange>true</isSecretRequiredForTokenExchange>
+    <isTokenExchangeEnabled>true</isTokenExchangeEnabled>
+    <label>Org_Monitor_glbloauth</label>
+    <shouldRotateConsumerKey>false</shouldRotateConsumerKey>
+    <shouldRotateConsumerSecret>false</shouldRotateConsumerSecret>
+</ExtlClntAppGlobalOauthSettings>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Security_Impact_Category__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Security Impact Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access Control</fullName>
+                <default>true</default>
+                <label>Access Control</label>
+            </value>
+            <value>
+                <fullName>Data Exposure</fullName>
+                <default>false</default>
+                <label>Data Exposure</label>
+            </value>
+            <value>
+                <fullName>Code Execution</fullName>
+                <default>false</default>
+                <label>Code Execution</label>
+            </value>
+            <value>
+                <fullName>Authentication</fullName>
+                <default>false</default>
+                <label>Authentication</label>
+            </value>
+            <value>
+                <fullName>Configuration Drift</fullName>
+                <default>false</default>
+                <label>Configuration Drift</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

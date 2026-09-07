@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actor_Context_Indicator__c</fullName>
+    <description>Visual actor context derived from delegated access, effective actor and deployment-user fields.</description>
+    <externalId>false</externalId>
+    <formula>IF(Is_Delegated_Access__c, IF(ISBLANK(Effective_Actor__c), &quot;⚠️ Login-As Actor Unresolved&quot;, &quot;🔑 Login-As Access&quot;), IF(ISBLANK(Effective_Actor__c), &quot;⚠️ Actor Unresolved&quot;, IF(Deployment_User_Log__c, &quot;🚀 Deployment User&quot;, &quot;👤 Internal User&quot;)))</formula>
+    <inlineHelpText>Shows whether the effective actor was delegated, a deployment user or unresolved.</inlineHelpText>
+    <label>Actor Context</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

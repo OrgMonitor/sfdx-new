@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enable_Deployment_Window_Approval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enable this setting to require approval before a Change Window record can be activated. When disabled, the record creator can activate Change Window records manually without approval.</description>
+    <inlineHelpText>Enable this setting to require approval before a Change Window record can be activated. When disabled, the record creator can activate Change Window records manually without approval.</inlineHelpText>
+    <label>Enable Deployment Window Approval</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read-only access to all Change Log objects, reports, and dashboards including Org Health Score trends and audit history. For stakeholders needing visibility without edit access.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Change Log – Viewer / Reporting</label>
+</PermissionSet>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the severity level mapping for each Salesforce Setup Audit Trail action code. Each record represents one action code (e.g. createUser, changeprofileforuser) and its corresponding severity classification (LOW, MEDIUM, HIGH, CRITICAL). Used by AuditTrailSeverityService to dynamically assign severity on Audit_Trail__c records without hardcoded logic.</description>
+    <label>Audit Trail Severity</label>
+    <pluralLabel>Audit Trail Severities</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

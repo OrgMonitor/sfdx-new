@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ViewAllData</label>
+    <protected>false</protected>
+    <values>
+        <field>Action_Regex__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Change_Operation_Override__c</field>
+        <value xsi:type="xsd:string">UPDATE</value>
+    </values>
+    <values>
+        <field>Critical_Security_Threat__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Display_Regex__c</field>
+        <value xsi:type="xsd:string">\bView All Data\b</value>
+    </values>
+    <values>
+        <field>Friendly_Template__c</field>
+        <value xsi:type="xsd:string">{actor} changed the `View All Data` permission.</value>
+    </values>
+    <values>
+        <field>Ignore__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Impact_Description__c</field>
+        <value xsi:type="xsd:string">This system permission grants organisation-wide data visibility and may expose sensitive records.</value>
+    </values>
+    <values>
+        <field>Metadata_Type_Override__c</field>
+        <value xsi:type="xsd:string">PermissionSet</value>
+    </values>
+    <values>
+        <field>Primary_Area_Override__c</field>
+        <value xsi:type="xsd:string">Security &amp; Access</value>
+    </values>
+    <values>
+        <field>Priority__c</field>
+        <value xsi:type="xsd:double">975.0</value>
+    </values>
+    <values>
+        <field>Redact_Sensitive_Data__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Review_Required__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Section_Regex__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Severity_Override__c</field>
+        <value xsi:type="xsd:string">CRITICAL</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Full admin access to Change Log package: CRUD on all objects, manage severity Custom Metadata, Hierarchy Custom Setting, and Apex classes. For package owners configuring and maintaining the compliance monitoring system.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Change Log – Admin</label>
+</PermissionSet>

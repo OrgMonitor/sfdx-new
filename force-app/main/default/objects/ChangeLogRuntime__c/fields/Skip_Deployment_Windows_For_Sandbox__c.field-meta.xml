@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skip_Deployment_Windows_For_Sandbox__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When enabled in a sandbox, changes made by nominated deployment users can be treated as deployment-window compliant without requiring an approved Deployment Window. Changes made by other users remain subject to normal Deployment Window checks.</description>
+    <inlineHelpText>Use this option for sandboxes with frequent deployments. It applies only to nominated deployment users and does not disable setup-change monitoring or other governance checks.</inlineHelpText>
+    <label>Skip Deployment Windows for Sandbox</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
