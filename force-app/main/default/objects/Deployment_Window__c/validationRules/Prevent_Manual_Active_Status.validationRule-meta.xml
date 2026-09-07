@@ -8,5 +8,5 @@
     Update_Via_Approval__c = FALSE
 )</errorConditionFormula>
     <errorDisplayField>Status__c</errorDisplayField>
-    <errorMessage>The Status can only be changed to Active via an approved Approval Process.</errorMessage>
+    <errorMessage>The Status can only be changed to Active via an approved Approval Process Only.</errorMessage>
 </ValidationRule>
