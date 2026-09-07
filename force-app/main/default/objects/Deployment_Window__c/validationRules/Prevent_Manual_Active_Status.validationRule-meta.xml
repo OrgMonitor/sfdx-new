@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Manual_Active_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Status__c),
+    ISPICKVAL(Status__c, &quot;Active&quot;),
+    Update_Via_Approval__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>The Status can only be changed to Active via an approved Approval Process.</errorMessage>
+</ValidationRule>

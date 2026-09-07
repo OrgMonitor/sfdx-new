@@ -21,6 +21,10 @@
     </quickActions>
     <startsWith>Consonant</startsWith>
     <validationRules>
+        <errorMessage><!-- The Status can only be changed to Active via an approved Approval Process. --></errorMessage>
+        <name>Prevent_Manual_Active_Status</name>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Release Runsheet must use a secure HTTPS URL. --></errorMessage>
         <name>Release_Runsheet_Must_Use_HTTPS</name>
     </validationRules>
